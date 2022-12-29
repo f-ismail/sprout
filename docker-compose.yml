@@ -6,7 +6,7 @@ services:
       context: .
       target: build
     ports:
-      - 8080:8080
+      - "8080:8080"
     environment:
       PSQL_HOST: sprout
       PSQL_PORT: 5432
@@ -15,7 +15,7 @@ services:
       PSQL_PASSWORD: sprout
 
 
-  psql:
+  sprout-db:
     image: postgres:15.1
     container_name: sprout-db
     environment:
@@ -23,5 +23,5 @@ services:
       POSTGRES_PASSWORD: sprout
       POSTGRES_DB: sprout
     ports:
-      - 5432:5432
+      - "5432:5432"
 
